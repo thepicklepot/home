@@ -170,7 +170,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(41, 47, 54, 0.7), rgba(41, 47, 54, 0.7)),
-        url('../assets/hero.jpg');
+        url('../assets/about.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
