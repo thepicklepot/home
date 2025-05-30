@@ -389,97 +389,127 @@ nav ul li a:hover {
     --secondary: #ff6b6b;
 }
 
+/* ----------  Testimonials Section  ---------- */
+
 .testimonials {
     padding: 100px 0;
-    background-color: white;
+    background-color: #ffffff;               /* or var(--light) if you have it */
 }
+
+/* ----------  Grid  ---------- */
 
 .testimonial-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 cards in a row */
+    grid-template-columns: repeat(3, 1fr);  /* 3-up on large screens   */
     gap: 30px;
     max-width: 1500px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 30px;
 }
 
+/* ----------  Card  ---------- */
+
 .testimonial-card {
-    background-color: var(--light);
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    background-color: var(--light, #fafafa);
+    padding: 24px 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
+    transition: transform .3s ease;
+
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px;
-    /* Increased height from 250px */
+
+    min-height: 260px;   /* grows with content (no clipping) */
+    height: auto;
 }
 
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
+.testimonial-card:hover { transform: translateY(-4px); }
 
-.testimonial-card:before {
+.testimonial-card::before {
     content: '"';
     position: absolute;
     top: 10px;
     left: 20px;
     font-size: 60px;
-    color: rgba(78, 205, 196, 0.2);
+    color: rgba(78, 205, 196, .2);
     font-family: serif;
     line-height: 1;
 }
+
+/* ----------  Text  ---------- */
 
 .testimonial-text {
     font-style: italic;
     color: #555;
     font-size: 15px;
     line-height: 1.6;
-    padding-left: 30px;
-    padding-right: 10px;
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 0 10px 0 34px;
+
+    /* prevent clipping / overflow on mobile */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 
+/* ----------  Author  ---------- */
+
 .testimonial-author {
-    margin-top: auto;
-    padding-left: 30px;
-    padding-top: 10px;
+    margin-top: 20px;
+    padding-left: 34px;
     border-top: 1px solid #eee;
 }
 
 .author-info h4 {
     font-size: 17px;
-    margin-bottom: 2px;
-    color: var(--dark);
+    margin: 8px 0 2px;
+    color: var(--dark, #222);
 }
 
 .author-info p {
     font-size: 14px;
-    color: var(--primary);
+    color: var(--primary, #4ecdd4);
     font-weight: 500;
 }
 
-.author-image {
-    display: none;
-}
+.author-image { display: none; }
 
-/* Responsive: stack on smaller screens */
+/* ----------  Breakpoints  ---------- */
+
+/* ≥ 1200 px → 3 columns (default)           */
+/* 992–1199 px → 2 columns                   */
 @media (max-width: 1200px) {
-    .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ≤ 768 px  → 1 column, mobile friendly     */
 @media (max-width: 768px) {
     .testimonial-grid {
         grid-template-columns: 1fr;
+        padding: 0 20px;
     }
+
+    .testimonial-card   { padding: 20px 24px; }
+    .testimonial-card::before { font-size: 40px; top: 6px; left: 14px; }
+
+    .testimonial-text  { font-size: 14px; padding-left: 28px; }
+    .testimonial-author{ padding-left: 28px; }
+
+    .author-info h4    { font-size: 16px; }
+    .author-info p     { font-size: 13px; }
 }
+
+/* ≤ 480 px  → tighter padding & type scale  */
+@media (max-width: 480px) {
+    .testimonial-grid  { padding: 0 15px; }
+
+    .testimonial-card  { padding: 18px 20px; }
+    .testimonial-card::before { font-size: 34px; left: 12px; }
+
+    .testimonial-text  { font-size: 13.5px; line-height: 1.55; padding-left: 26px; }
+}
+
 
 /* Contact Section */
 .contact {
