@@ -510,6 +510,40 @@ nav ul li a:hover {
     .testimonial-text  { font-size: 13.5px; line-height: 1.55; padding-left: 26px; }
 }
 
+.fssai {
+    text-align: center;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.fssai img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: reduce spacing on smaller screens */
+@media (max-width: 768px) {
+    .fssai {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .fssai img {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fssai {
+        margin: 20px auto;
+    }
+
+    .fssai img {
+        border-radius: 6px;
+    }
+}
 
 /* Contact Section */
 .contact {
