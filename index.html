@@ -127,7 +127,7 @@
                     <p>Aam ka tadka, masalon ka dhamaka! Kaccha aam meets chatpate spices – one spoon, and the whole dabba goes missing!</p>
                     <div class="product-price">
                         <span class="price">₹150 / 250g</span>
-                        <a href="https://wa.me/917019354936?text=I'm%20interested%20in%20ordering%20Khata%20Aam%20Bomb%20Pickle" target="_blank" style="text-decoration: none; color: inherit;">
+                        <a href="https://wa.me/917019354936?text=I'm%20interested%20in%20ordering%20Khatta%20Aam%20Bomb%20Pickle" target="_blank" style="text-decoration: none; color: inherit;">
                             <button class="buy-now"><i class="fas fa-bolt"></i> Buy Now</button>
                         </a>
                         </div>
@@ -190,6 +190,14 @@
         </div>
     </div>
 </section>
+<!-- Promo Popup -->
+<div class="promo-popup" id="promoPopup">
+  <div class="popup-content">
+    <span class="close-popup" onclick="closePopup()">&times;</span>
+    <p>🚚 Enjoy <strong>free delivery</strong> on all orders above <strong>500g</strong>!</p>
+  </div>
+</div>
+
 
 
 <!-- Testimonials Section -->
@@ -332,7 +340,9 @@
                 </div>
                 <div class="fssai">
                     <img src="assets/FSSAI-21-1-2020.jpg" alt="fssai">
+                    <p class="fssai-number">FSSAI No: 21225190000458</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -412,6 +422,17 @@
                 });
             });
         });
+
+         // Show popup after 2 seconds
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+            document.getElementById('promoPopup').style.display = 'flex';
+            }, 2000);
+        });
+
+        function closePopup() {
+            document.getElementById('promoPopup').style.display = 'none';
+        }
     </script>
 </body>
 
